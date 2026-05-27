@@ -3,10 +3,11 @@ import games from "./games";
 import "./App.css";
 
 function App() {
-  const [search, setSearch]       = useState("");
-  const [genreFilter, setGenre]   = useState("Todos");
-  const [yearFilter, setYear]     = useState("Todos");
-  const [imgErrors, setImgErrors] = useState({});
+  const [search, setSearch]         = useState("");
+  const [genreFilter, setGenre]     = useState("Todos");
+  const [yearFilter, setYear]       = useState("Todos");
+  const [categoryFilter, setCategory] = useState("Todas");
+  const [imgErrors, setImgErrors]   = useState({});
 
   const genres = ["Todos", ...new Set(games.map(g => g.genre))].sort((a, b) =>
     a === "Todos" ? -1 : b === "Todos" ? 1 : a.localeCompare(b)
@@ -14,12 +15,14 @@ function App() {
   const years = ["Todos", ...new Set(games.map(g => String(g.year)))].sort((a, b) =>
     a === "Todos" ? -1 : b === "Todos" ? 1 : Number(a) - Number(b)
   );
+  const categories = ["Todas", ...new Set(games.map(g => g.category))];
 
   const filtered = games.filter(game => {
-    const matchSearch = game.title.toLowerCase().includes(search.toLowerCase());
-    const matchGenre  = genreFilter === "Todos" || game.genre === genreFilter;
-    const matchYear   = yearFilter  === "Todos" || String(game.year) === yearFilter;
-    return matchSearch && matchGenre && matchYear;
+    const matchSearch   = game.title.toLowerCase().includes(search.toLowerCase());
+    const matchGenre    = genreFilter    === "Todos"  || game.genre     === genreFilter;
+    const matchYear     = yearFilter     === "Todos"  || String(game.year) === yearFilter;
+    const matchCategory = categoryFilter === "Todas"  || game.category  === categoryFilter;
+    return matchSearch && matchGenre && matchYear && matchCategory;
   });
 
   const genreColors = {
@@ -28,8 +31,17 @@ function App() {
     "Battle Royale": "#d4a017",
     "RPG":           "#7a52e0",
     "Sobrevivência": "#52a06e",
-    "Social":        "#5299e0",
+    "Cooperativo":   "#5299e0",
     "Ação":          "#e05299",
+    "Aventura":      "#3db8a0",
+    "Esportes":      "#52c0e0",
+  };
+
+  const categoryIcons = {
+    "Mais Transmitidos":       "🏆",
+    "Campanhas e Lançamentos": "🎬",
+    "Terror e Sobrevivência":  "👻",
+    "Cooperativos":            "🤝",
   };
 
   return (
@@ -48,6 +60,20 @@ function App() {
       </header>
 
       <main className="main">
+        {/* Category tabs */}
+        <div className="tabs">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`tab ${categoryFilter === cat ? "tab--active" : ""}`}
+              onClick={() => setCategory(cat)}
+            >
+              {cat !== "Todas" && categoryIcons[cat] ? `${categoryIcons[cat]} ` : ""}{cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Filters */}
         <div className="filters">
           <div className="search-wrap">
             <span className="search-icon">🔍</span>
@@ -62,11 +88,9 @@ function App() {
               <button className="clear-btn" onClick={() => setSearch("")}>✕</button>
             )}
           </div>
-
           <select className="select" value={genreFilter} onChange={e => setGenre(e.target.value)}>
             {genres.map(g => <option key={g}>{g}</option>)}
           </select>
-
           <select className="select" value={yearFilter} onChange={e => setYear(e.target.value)}>
             {years.map(y => <option key={y}>{y}</option>)}
           </select>
@@ -83,7 +107,7 @@ function App() {
               <div
                 className="card"
                 key={game.id}
-                style={{ animationDelay: `${i * 40}ms` }}
+                style={{ animationDelay: `${i * 30}ms` }}
               >
                 <div className="card-img-wrap">
                   {imgErrors[game.id] ? (
