@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# 🎮 Alanzoka — Game History Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Catálogo visual com todos os jogos transmitidos pelo streamer **Alanzoka** na Twitch. Mais de **200 jogos** organizados por categoria, gênero e ano, com capa, plataforma e uma breve descrição de cada título.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?logo=javascript&logoColor=black)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Busca** por nome do jogo em tempo real
+- **Filtro por gênero** (Terror, FPS, RPG, Battle Royale, Aventura…)
+- **Filtro por ano** de lançamento
+- **Abas por categoria**:
+  - 🏆 Mais Transmitidos
+  - 🎬 Campanhas e Lançamentos
+  - 👻 Terror e Sobrevivência
+  - 🤝 Cooperativos
+  - 🕹️ Indies e Especiais
+- Cards com capa, badge de gênero colorido, plataforma e descrição
+- Fallback automático de imagem quando a capa não carrega
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Como rodar localmente
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Instalar dependências
+npm install
 
-### `npm run build`
+# Rodar em desenvolvimento
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Gerar build de produção
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🗂️ Estrutura
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+src/
+├── App.js        # Componente principal com filtros e grid de cards
+├── App.css       # Estilos
+└── games.js      # Lista completa dos ~200 jogos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+public/
+└── images/       # Capas locais dos jogos
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🎮 Sobre o Alanzoka
 
-## Learn More
+[Alanzoka](https://www.twitch.tv/alanzoka) é um dos maiores streamers do Brasil, com transmissões diárias desde 2014. Este projeto registra o histórico de jogos do canal desde os primórdios.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feito com ❤️ para a comunidade.
