@@ -6,7 +6,7 @@ const games = [
     genre: "Battle Royale",
     platform: "PC",
     year: 2018,
-    cover: "https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-1920x1080-b07cc9b83a7b.jpg",
+    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wk8.jpg",
     description: "Um dos jogos mais streamados na história do canal, presente em várias fases.",
     category: "Mais Transmitidos"
   },
@@ -178,7 +178,7 @@ const games = [
     genre: "Sobrevivência",
     platform: "PC",
     year: 2012,
-    cover: "https://www.minecraft.net/content/dam/games/minecraft/key-art/MC_Listing_Tile_06.jpg",
+    cover: "https://images.igdb.com/igdb/image/upload/t_cover_big/co49x5.jpg",
     description: "Primeiro grande sucesso do canal, série que ajudou a construir a base de fãs.",
     category: "Terror e Sobrevivência"
   },
