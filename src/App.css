@@ -47,8 +47,12 @@ body {
 }
 
 .logo-icon {
-  font-size: 2rem;
-  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
 .logo-title {

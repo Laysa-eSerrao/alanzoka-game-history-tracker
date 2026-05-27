@@ -53,7 +53,7 @@ function App() {
       <header className="header">
         <div className="header-inner">
           <div className="logo-area">
-            <span className="logo-icon">🎮</span>
+            <img src="/images/alanzoka.jpg" alt="Alanzoka" className="logo-icon" />
             <div>
               <h1 className="logo-title">Alanzoka</h1>
               <p className="logo-sub">Game History Tracker</p>
