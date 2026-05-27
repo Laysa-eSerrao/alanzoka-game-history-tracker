@@ -1,23 +1,118 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import games from "./games";
+import "./App.css";
 
 function App() {
+  const [search, setSearch]       = useState("");
+  const [genreFilter, setGenre]   = useState("Todos");
+  const [yearFilter, setYear]     = useState("Todos");
+  const [imgErrors, setImgErrors] = useState({});
+
+  const genres = ["Todos", ...new Set(games.map(g => g.genre))].sort((a, b) =>
+    a === "Todos" ? -1 : b === "Todos" ? 1 : a.localeCompare(b)
+  );
+  const years = ["Todos", ...new Set(games.map(g => String(g.year)))].sort((a, b) =>
+    a === "Todos" ? -1 : b === "Todos" ? 1 : Number(a) - Number(b)
+  );
+
+  const filtered = games.filter(game => {
+    const matchSearch = game.title.toLowerCase().includes(search.toLowerCase());
+    const matchGenre  = genreFilter === "Todos" || game.genre === genreFilter;
+    const matchYear   = yearFilter  === "Todos" || String(game.year) === yearFilter;
+    return matchSearch && matchGenre && matchYear;
+  });
+
+  const genreColors = {
+    "Terror":        "#e05252",
+    "FPS":           "#e07a52",
+    "Battle Royale": "#d4a017",
+    "RPG":           "#7a52e0",
+    "Sobrevivência": "#52a06e",
+    "Social":        "#5299e0",
+    "Ação":          "#e05299",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="header">
+        <div className="header-inner">
+          <div className="logo-area">
+            <span className="logo-icon">🎮</span>
+            <div>
+              <h1 className="logo-title">Alanzoka</h1>
+              <p className="logo-sub">Game History Tracker</p>
+            </div>
+          </div>
+          <p className="header-count">{filtered.length} jogo{filtered.length !== 1 ? "s" : ""}</p>
+        </div>
       </header>
+
+      <main className="main">
+        <div className="filters">
+          <div className="search-wrap">
+            <span className="search-icon">🔍</span>
+            <input
+              className="search"
+              type="text"
+              placeholder="Buscar jogo..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+            {search && (
+              <button className="clear-btn" onClick={() => setSearch("")}>✕</button>
+            )}
+          </div>
+
+          <select className="select" value={genreFilter} onChange={e => setGenre(e.target.value)}>
+            {genres.map(g => <option key={g}>{g}</option>)}
+          </select>
+
+          <select className="select" value={yearFilter} onChange={e => setYear(e.target.value)}>
+            {years.map(y => <option key={y}>{y}</option>)}
+          </select>
+        </div>
+
+        {filtered.length === 0 ? (
+          <div className="empty">
+            <span>🕹️</span>
+            <p>Nenhum jogo encontrado com esses filtros.</p>
+          </div>
+        ) : (
+          <div className="grid">
+            {filtered.map((game, i) => (
+              <div
+                className="card"
+                key={game.id}
+                style={{ animationDelay: `${i * 40}ms` }}
+              >
+                <div className="card-img-wrap">
+                  {imgErrors[game.id] ? (
+                    <div className="card-img-fallback">🎮</div>
+                  ) : (
+                    <img
+                      className="card-img"
+                      src={game.cover}
+                      alt={game.title}
+                      onError={() => setImgErrors(e => ({ ...e, [game.id]: true }))}
+                    />
+                  )}
+                  <span
+                    className="genre-badge"
+                    style={{ background: genreColors[game.genre] || "#555" }}
+                  >
+                    {game.genre}
+                  </span>
+                </div>
+                <div className="card-body">
+                  <h2 className="card-title">{game.title}</h2>
+                  <p className="card-meta">{game.platform} · {game.year}</p>
+                  <p className="card-desc">{game.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </main>
     </div>
   );
 }
