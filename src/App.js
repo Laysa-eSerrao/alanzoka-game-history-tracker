@@ -35,6 +35,9 @@ function App() {
     "Ação":          "#e05299",
     "Aventura":      "#3db8a0",
     "Esportes":      "#52c0e0",
+    "Puzzle":        "#e0b052",
+    "Estratégia":    "#52e0c0",
+    "Indie":         "#a852e0",
   };
 
   const categoryIcons = {
@@ -42,6 +45,7 @@ function App() {
     "Campanhas e Lançamentos": "🎬",
     "Terror e Sobrevivência":  "👻",
     "Cooperativos":            "🤝",
+    "Indies e Especiais":      "🕹️",
   };
 
   return (

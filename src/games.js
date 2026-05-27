@@ -1,380 +1,228 @@
+// Legenda de covers:
+//   /images/nome.jpg        → arquivo local em public/images/
+//   https://shared.fastly…  → Steam CDN
+
 const games = [
 
-  // ── 🏆 Mais Transmitidos ──────────────────────────────────────
-  {
-    id: 1,
-    title: "Fortnite",
-    genre: "Battle Royale", platform: "PC", year: 2018,
-    cover: "/images/fortnite.jpg",
-    description: "Um dos jogos com mais horas no canal. Presente em várias temporadas e fases.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 2,
-    title: "Rocket League",
-    genre: "Esportes", platform: "PC", year: 2019,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252950/header.jpg",
-    description: "Futebol com carros que virou presença fixa nas lives por anos.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 3,
-    title: "PUBG: Battlegrounds",
-    genre: "Battle Royale", platform: "PC", year: 2017,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg",
-    description: "Battle royale que dominou a Twitch e foi um dos pilares do canal.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 4,
-    title: "Escape from Tarkov",
-    genre: "FPS", platform: "PC", year: 2020,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/header.jpg",
-    description: "Shooter hardcore de extração com centenas de horas acumuladas no canal.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 5,
-    title: "Counter-Strike 2",
-    genre: "FPS", platform: "PC", year: 2023,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg",
-    description: "Do CS:GO ao CS2, um clássico recorrente em todas as fases do canal.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 6,
-    title: "Call of Duty: Warzone",
-    genre: "Battle Royale", platform: "PC", year: 2020,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/header.jpg",
-    description: "Battle royale da franquia CoD com grande destaque nas transmissões.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 7,
-    title: "Apex Legends",
-    genre: "Battle Royale", platform: "PC", year: 2019,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg",
-    description: "Battle royale da Respawn que entrou forte na grade de jogos do Alan.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 8,
-    title: "Dead by Daylight",
-    genre: "Terror", platform: "PC", year: 2016,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg",
-    description: "Assimétrico de terror cooperativo que virou presença constante no canal.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 9,
-    title: "Valorant",
-    genre: "FPS", platform: "PC", year: 2020,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2178700/header.jpg",
-    description: "FPS tático que dominou a Twitch no lançamento e permaneceu por longos períodos.",
-    category: "Mais Transmitidos"
-  },
-  {
-    id: 10,
-    title: "Overwatch",
-    genre: "FPS", platform: "PC", year: 2016,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2357570/header.jpg",
-    description: "Alan representou o Brasil na Copa do Mundo de Overwatch 2016 como Nextage.",
-    category: "Mais Transmitidos"
-  },
+  // ══════════════════════════════════════════════════════
+  // 🏆 MAIS TRANSMITIDOS
+  // ══════════════════════════════════════════════════════
+  { id: 1,   title: "Fortnite",                    genre: "Battle Royale", platform: "PC",     year: 2018, cover: "/images/fortnite.jpg",                                                                                                    description: "Um dos jogos com mais horas no canal. Presente em várias temporadas.",            category: "Mais Transmitidos" },
+  { id: 2,   title: "Rocket League",               genre: "Esportes",      platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/252950/header.jpg",   description: "Futebol com carros — presença fixa nas lives por anos.",                         category: "Mais Transmitidos" },
+  { id: 3,   title: "PUBG: Battlegrounds",          genre: "Battle Royale", platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg",   description: "Battle royale que dominou a Twitch e foi um dos pilares do canal.",              category: "Mais Transmitidos" },
+  { id: 4,   title: "Escape from Tarkov",           genre: "FPS",           platform: "PC",     year: 2020, cover: "/images/escape-from-tarkov.jpg",                                                          description: "Shooter hardcore de extração com centenas de horas acumuladas.",                  category: "Mais Transmitidos" },
+  { id: 5,   title: "Counter-Strike 2",             genre: "FPS",           platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg",       description: "Do CS:GO ao CS2 — clássico recorrente em todas as fases do canal.",               category: "Mais Transmitidos" },
+  { id: 6,   title: "Call of Duty: Warzone",        genre: "Battle Royale", platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1938090/header.jpg",  description: "Battle royale da franquia CoD com grande destaque nas transmissões.",             category: "Mais Transmitidos" },
+  { id: 7,   title: "Apex Legends",                 genre: "Battle Royale", platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172470/header.jpg",  description: "Battle royale da Respawn que entrou forte na grade do Alan.",                     category: "Mais Transmitidos" },
+  { id: 8,   title: "Dead by Daylight",             genre: "Terror",        platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/header.jpg",   description: "Terror assimétrico cooperativo — presença constante no canal.",                   category: "Mais Transmitidos" },
+  { id: 9,   title: "Valorant",                     genre: "FPS",           platform: "PC",     year: 2020, cover: "/images/valorant.jpg",                                                                    description: "FPS tático que dominou a Twitch no lançamento.",                                 category: "Mais Transmitidos" },
+  { id: 10,  title: "Overwatch",                    genre: "FPS",           platform: "PC",     year: 2016, cover: "/images/overwatch.jpg",                                                                   description: "Alan representou o Brasil na Copa do Mundo de Overwatch 2016 como Nextage.",      category: "Mais Transmitidos" },
+  { id: 11,  title: "FIFA 22",                      genre: "Esportes",      platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1506830/header.jpg",  description: "Futebol virtual com sessões divertidas e descontraídas.",                        category: "Mais Transmitidos" },
+  { id: 12,  title: "Battlefield 2042",             genre: "FPS",           platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1517290/header.jpg",  description: "Shooter multiplayer de grande escala jogado nas lives.",                          category: "Mais Transmitidos" },
+  { id: 13,  title: "Call of Duty: Black Ops 6",   genre: "FPS",           platform: "PC",     year: 2024, cover: "/images/cod-bo6.jpg",                                                                     description: "Mais um capítulo da franquia jogado no lançamento.",                              category: "Mais Transmitidos" },
+  { id: 14,  title: "Marvel Rivals",                genre: "FPS",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/header.jpg",  description: "Hero shooter da Marvel que explodiu na Twitch no lançamento.",                    category: "Mais Transmitidos" },
+  { id: 15,  title: "DOTA 2",                       genre: "MOBA",          platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/570/header.jpg",       description: "MOBA icônico jogado em sessions nas lives.",                                      category: "Mais Transmitidos" },
+  { id: 16,  title: "Deadlock",                     genre: "FPS",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1422450/header.jpg",  description: "Novo hero shooter da Valve jogado durante o acesso antecipado.",                  category: "Mais Transmitidos" },
 
-  // ── 🎬 Campanhas e Grandes Lançamentos ───────────────────────
-  {
-    id: 11,
-    title: "GTA V",
-    genre: "Ação", platform: "PC", year: 2015,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg",
-    description: "Clássico que sempre volta ao canal em diferentes fases e atualizações.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 12,
-    title: "Red Dead Redemption II",
-    genre: "Aventura", platform: "PC", year: 2019,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg",
-    description: "Campanha épica jogada do início ao fim com enorme engajamento do chat.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 13,
-    title: "Elden Ring",
-    genre: "RPG", platform: "PC", year: 2022,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",
-    description: "Soulslike que dominou a Twitch no lançamento e rendeu horas de conteúdo.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 14,
-    title: "Baldur's Gate 3",
-    genre: "RPG", platform: "PC", year: 2023,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg",
-    description: "RPG de turno que tomou conta das lives por semanas seguidas no lançamento.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 15,
-    title: "Cyberpunk 2077",
-    genre: "RPG", platform: "PC", year: 2020,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",
-    description: "Uma das streams mais assistidas do canal no lançamento polêmico.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 16,
-    title: "Hogwarts Legacy",
-    genre: "Aventura", platform: "PC", year: 2023,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/header.jpg",
-    description: "Bateu recordes globais de audiência na Twitch durante as lives do Alan.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 17,
-    title: "The Witcher 3",
-    genre: "RPG", platform: "PC", year: 2015,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg",
-    description: "RPG de mundo aberto jogado por completo em live com quests e DLCs.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 18,
-    title: "The Last of Us Parte I",
-    genre: "Aventura", platform: "PC", year: 2023,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/header.jpg",
-    description: "Campanha emocionante jogada do início ao fim nas lives.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 19,
-    title: "God of War Ragnarök",
-    genre: "Ação", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322010/header.jpg",
-    description: "Kratos e Atreus em aventura nórdica épica transmitida ao vivo.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 20,
-    title: "A Plague Tale: Requiem",
-    genre: "Aventura", platform: "PC", year: 2022,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1182900/header.jpg",
-    description: "Continuação sombria jogada em live com reações marcantes do chat.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 21,
-    title: "A Plague Tale: Innocence",
-    genre: "Aventura", platform: "PC", year: 2019,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg",
-    description: "Primeiro jogo da franquia, jogado em live antes da sequência.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 22,
-    title: "Sekiro: Shadows Die Twice",
-    genre: "RPG", platform: "PC", year: 2019,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg",
-    description: "Soulslike da FromSoftware com muitas mortes e momentos icônicos na live.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 23,
-    title: "Astro Bot",
-    genre: "Plataforma", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2865780/header.jpg",
-    description: "Plataforma charmoso que virou destaque nas lives recentes.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 24,
-    title: "Age of Mythology",
-    genre: "Estratégia", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1934680/header.jpg",
-    description: "Clássico da estratégia em tempo real remaster jogado ao vivo.",
-    category: "Campanhas e Lançamentos"
-  },
-  {
-    id: 25,
-    title: "Age of Empires IV",
-    genre: "Estratégia", platform: "PC", year: 2021,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466860/header.jpg",
-    description: "Estratégia em tempo real que entrou nas lives como variação de conteúdo.",
-    category: "Campanhas e Lançamentos"
-  },
+  // ══════════════════════════════════════════════════════
+  // 🎬 CAMPANHAS E GRANDES LANÇAMENTOS
+  // ══════════════════════════════════════════════════════
+  { id: 17,  title: "GTA V",                        genre: "Ação",          platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg",   description: "Clássico que sempre volta ao canal em diferentes fases.",                        category: "Campanhas e Lançamentos" },
+  { id: 18,  title: "GTA IV",                       genre: "Ação",          platform: "PC",     year: 2008, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/header.jpg",    description: "Clássico de Liberty City com Niko Bellic jogado em live.",                       category: "Campanhas e Lançamentos" },
+  { id: 19,  title: "GTA: San Andreas",             genre: "Ação",          platform: "PC",     year: 2004, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12120/header.jpg",    description: "CJ em Los Santos — clássico nostálgico jogado nas lives.",                       category: "Campanhas e Lançamentos" },
+  { id: 20,  title: "GTA: Vice City",               genre: "Ação",          platform: "PC",     year: 2002, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12110/header.jpg",    description: "Tommy Vercetti nos anos 80 — série clássica do canal.",                          category: "Campanhas e Lançamentos" },
+  { id: 21,  title: "GTA III",                      genre: "Ação",          platform: "PC",     year: 2002, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12100/header.jpg",    description: "O GTA que começou tudo — jogado em live no canal.",                              category: "Campanhas e Lançamentos" },
+  { id: 22,  title: "Red Dead Redemption II",       genre: "Aventura",      platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg",  description: "Campanha épica jogada do início ao fim com enorme engajamento.",                  category: "Campanhas e Lançamentos" },
+  { id: 23,  title: "Elden Ring",                   genre: "RPG",           platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg",  description: "Soulslike que dominou a Twitch no lançamento.",                                  category: "Campanhas e Lançamentos" },
+  { id: 24,  title: "Dark Souls 3",                 genre: "RPG",           platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/374320/header.jpg",   description: "Soulslike clássico com muitas mortes épicas nas lives.",                         category: "Campanhas e Lançamentos" },
+  { id: 25,  title: "Sekiro: Shadows Die Twice",    genre: "RPG",           platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg",   description: "Soulslike ninja com boss fights memoráveis nas lives.",                           category: "Campanhas e Lançamentos" },
+  { id: 26,  title: "Lies of P",                    genre: "RPG",           platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/header.jpg",  description: "Soulslike baseado em Pinóquio — jogado do início ao fim.",                       category: "Campanhas e Lançamentos" },
+  { id: 27,  title: "Eldest Souls",                 genre: "RPG",           platform: "PC",     year: 2021, cover: "/images/eldest-souls.jpg",  description: "Boss rush soulslike pixelado jogado ao vivo.",                                   category: "Campanhas e Lançamentos" },
+  { id: 28,  title: "Baldur's Gate 3",              genre: "RPG",           platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg",  description: "RPG de turno que tomou conta das lives por semanas.",                            category: "Campanhas e Lançamentos" },
+  { id: 29,  title: "Cyberpunk 2077",               genre: "RPG",           platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",  description: "Uma das streams mais assistidas no lançamento polêmico.",                        category: "Campanhas e Lançamentos" },
+  { id: 30,  title: "Hogwarts Legacy",              genre: "Aventura",      platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/header.jpg",   description: "Bateu recordes globais de audiência na Twitch durante as lives do Alan.",         category: "Campanhas e Lançamentos" },
+  { id: 31,  title: "The Witcher 3",                genre: "RPG",           platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg",   description: "RPG de mundo aberto jogado por completo com quests e DLCs.",                     category: "Campanhas e Lançamentos" },
+  { id: 32,  title: "The Last of Us Parte I",       genre: "Aventura",      platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1888930/header.jpg",  description: "Campanha emocionante jogada do início ao fim.",                                  category: "Campanhas e Lançamentos" },
+  { id: 33,  title: "The Last of Us Parte II",      genre: "Aventura",      platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2531310/header.jpg",  description: "Continuação polêmica com reações intensas do chat.",                             category: "Campanhas e Lançamentos" },
+  { id: 34,  title: "God of War (2018)",            genre: "Ação",          platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg",  description: "Kratos e Atreus na mitologia nórdica.",                                          category: "Campanhas e Lançamentos" },
+  { id: 35,  title: "God of War Ragnarök",          genre: "Ação",          platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322010/header.jpg",  description: "Conclusão épica da saga nórdica transmitida ao vivo.",                           category: "Campanhas e Lançamentos" },
+  { id: 36,  title: "God of War III",               genre: "Ação",          platform: "PS3",    year: 2010, cover: "/images/god-of-war-iii.jpg",  description: "Kratos na mitologia grega — clássico do PS3 jogado ao vivo.",                    category: "Campanhas e Lançamentos" },
+  { id: 37,  title: "A Plague Tale: Innocence",     genre: "Aventura",      platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg",   description: "Irmãos fugindo da Inquisição e da Peste — início da franquia.",                  category: "Campanhas e Lançamentos" },
+  { id: 38,  title: "A Plague Tale: Requiem",       genre: "Aventura",      platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1182900/header.jpg",  description: "Continuação sombria com reações marcantes do chat.",                             category: "Campanhas e Lançamentos" },
+  { id: 39,  title: "Far Cry 3",                    genre: "Ação",          platform: "PC",     year: 2012, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/220240/header.jpg",   description: "Ilha tropical e Vaas Montenegro — série Far Cry nas lives.",                     category: "Campanhas e Lançamentos" },
+  { id: 40,  title: "Far Cry 4",                    genre: "Ação",          platform: "PC",     year: 2014, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/298110/header.jpg",   description: "Kyrat e Pagan Min — continuação da franquia nas lives.",                         category: "Campanhas e Lançamentos" },
+  { id: 41,  title: "Far Cry 5",                    genre: "Ação",          platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552520/header.jpg",   description: "Montana e a seita de Joseph Seed jogados ao vivo.",                              category: "Campanhas e Lançamentos" },
+  { id: 42,  title: "Far Cry 6",                    genre: "Ação",          platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2369390/header.jpg",  description: "Guerrilha em Yara com Giancarlo Esposito.",                                      category: "Campanhas e Lançamentos" },
+  { id: 43,  title: "Tomb Raider (2013)",           genre: "Aventura",      platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/203160/header.jpg",   description: "Origem de Lara Croft — início da trilogia moderna.",                            category: "Campanhas e Lançamentos" },
+  { id: 44,  title: "Rise of the Tomb Raider",      genre: "Aventura",      platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391220/header.jpg",   description: "Segundo capítulo da trilogia Lara Croft jogado ao vivo.",                        category: "Campanhas e Lançamentos" },
+  { id: 45,  title: "Shadow of the Tomb Raider",    genre: "Aventura",      platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/750920/header.jpg",   description: "Conclusão da trilogia moderna de Lara Croft.",                                   category: "Campanhas e Lançamentos" },
+  { id: 46,  title: "Uncharted: Legacy of Thieves", genre: "Aventura",      platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/header.jpg",  description: "Uncharted 4 e Lost Legacy — ação cinematográfica nas lives.",                    category: "Campanhas e Lançamentos" },
+  { id: 47,  title: "Assassin's Creed: Black Flag", genre: "Aventura",      platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242050/header.jpg",   description: "Pirataria e assassinos no Caribe jogado ao vivo.",                               category: "Campanhas e Lançamentos" },
+  { id: 48,  title: "Assassin's Creed Unity",       genre: "Ação",          platform: "PC",     year: 2014, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/289650/header.jpg",   description: "Paris na Revolução Francesa — jogado nas lives.",                                category: "Campanhas e Lançamentos" },
+  { id: 49,  title: "Assassin's Creed Odyssey",     genre: "RPG",           platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/812140/header.jpg",   description: "RPG épico na Grécia antiga com horas de live.",                                  category: "Campanhas e Lançamentos" },
+  { id: 50,  title: "Assassin's Creed Valhalla",    genre: "RPG",           platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2208920/header.jpg",  description: "Saga viking em mundo aberto jogado em live.",                                    category: "Campanhas e Lançamentos" },
+  { id: 51,  title: "Assassin's Creed Mirage",      genre: "Ação",          platform: "PC",     year: 2023, cover: "/images/assassins-creed-mirage.jpg",                                                     description: "Retorno às origens da franquia jogado no lançamento.",                            category: "Campanhas e Lançamentos" },
+  { id: 52,  title: "Assassin's Creed Shadows",     genre: "RPG",           platform: "PC",     year: 2025, cover: "/images/assassins-creed-shadows.jpg",  description: "Shinobi e samurai no Japão feudal — jogado ao vivo em 2025.",                    category: "Campanhas e Lançamentos" },
+  { id: 53,  title: "Watch Dogs",                   genre: "Ação",          platform: "PC",     year: 2014, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/243470/header.jpg",   description: "Hacker em Chicago — início da franquia nas lives.",                              category: "Campanhas e Lançamentos" },
+  { id: 54,  title: "Watch Dogs 2",                 genre: "Ação",          platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/447040/header.jpg",   description: "Hacktivismo em San Francisco jogado ao vivo.",                                   category: "Campanhas e Lançamentos" },
+  { id: 55,  title: "Watch Dogs: Legion",           genre: "Ação",          platform: "PC",     year: 2020, cover: "/images/watch-dogs-legion.jpg",  description: "Londres distópica com hackers — jogado em live.",                                category: "Campanhas e Lançamentos" },
+  { id: 56,  title: "Star Wars Jedi: Fallen Order", genre: "Ação",          platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172380/header.jpg",  description: "Soulslike no universo Star Wars com boa recepção no chat.",                      category: "Campanhas e Lançamentos" },
+  { id: 57,  title: "Star Wars: Outlaws",           genre: "Ação",          platform: "PC",     year: 2024, cover: "/images/star-wars-outlaws.jpg",  description: "Mundo aberto no universo Star Wars jogado no lançamento.",                       category: "Campanhas e Lançamentos" },
+  { id: 58,  title: "Final Fantasy XVI",            genre: "RPG",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2515020/header.jpg",  description: "RPG da Square Enix jogado ao vivo no lançamento para PC.",                       category: "Campanhas e Lançamentos" },
+  { id: 59,  title: "Marvel's Spider-Man 2",        genre: "Ação",          platform: "PS5",    year: 2023, cover: "/images/spider-man-2.jpg",                                                               description: "Peter Parker e Miles Morales em exclusivo PS5 jogado nas lives.",                 category: "Campanhas e Lançamentos" },
+  { id: 60,  title: "Spider Man (2018)",            genre: "Ação",          platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/header.jpg",  description: "Peter Parker em Nova York — jogado ao vivo antes do 2.",                         category: "Campanhas e Lançamentos" },
+  { id: 61,  title: "Spider-Man: Miles Morales",    genre: "Ação",          platform: "PC",     year: 2022, cover: "/images/spider-man-miles.jpg",  description: "Miles Morales em seu próprio capítulo jogado nas lives.",                        category: "Campanhas e Lançamentos" },
+  { id: 62,  title: "Zelda: Tears of the Kingdom", genre: "Aventura",      platform: "Switch", year: 2023, cover: "/images/zelda-totk.jpg",                                                                  description: "Exclusivo Nintendo Switch — exploração épica de Hyrule ao vivo.",                category: "Campanhas e Lançamentos" },
+  { id: 63,  title: "Zelda: Echoes of Wisdom",      genre: "Aventura",      platform: "Switch", year: 2024, cover: "/images/zelda-echoes.jpg",                                                               description: "Zelda como protagonista — jogado ao vivo no lançamento.",                        category: "Campanhas e Lançamentos" },
+  { id: 64,  title: "Astro Bot",                    genre: "Ação",    platform: "PS5",    year: 2024, cover: "/images/astro-bot.jpg",                                                                   description: "GOTY 2024 exclusivo PS5 jogado nas lives.",                                      category: "Campanhas e Lançamentos" },
+  { id: 65,  title: "Stray",                        genre: "Aventura",      platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1332010/header.jpg",  description: "Indie de gato em cidade cyberpunk — muito sucesso na Twitch.",                    category: "Campanhas e Lançamentos" },
+  { id: 66,  title: "Clair Obscur: Expedition 33",  genre: "RPG",           platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1903340/header.jpg",  description: "RPG francês aclamado — um dos maiores lançamentos de 2025.",                     category: "Campanhas e Lançamentos" },
+  { id: 67,  title: "Black Myth: Wukong",           genre: "RPG",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg",  description: "Action RPG chinês que surpreendeu o mundo — jogado ao vivo.",                    category: "Campanhas e Lançamentos" },
+  { id: 68,  title: "Indiana Jones e o Grande Círculo", genre: "Aventura",  platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2677660/header.jpg",  description: "Aventura do Indiana Jones jogada ao vivo no lançamento.",                        category: "Campanhas e Lançamentos" },
+  { id: 69,  title: "Warhammer 40K: Space Marine 2",genre: "Ação",          platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2183900/header.jpg",  description: "Colossal ação no universo 40K jogado nas lives.",                                category: "Campanhas e Lançamentos" },
+  { id: 70,  title: "S.T.A.L.K.E.R 2",             genre: "FPS",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1643320/header.jpg",  description: "Survival shooter na Zona de Exclusão jogado no lançamento.",                     category: "Campanhas e Lançamentos" },
+  { id: 71,  title: "Monster Hunter: Wilds",        genre: "RPG",           platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2246340/header.jpg",  description: "Caça épica a monstros — um dos maiores lançamentos de 2025.",                    category: "Campanhas e Lançamentos" },
+  { id: 72,  title: "Kingdom Come: Deliverance II", genre: "RPG",           platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1771300/header.jpg",  description: "RPG medieval realista jogado ao vivo em 2025.",                                  category: "Campanhas e Lançamentos" },
+  { id: 73,  title: "Dragon's Dogma 2",             genre: "RPG",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2054970/header.jpg",  description: "RPG de mundo aberto da Capcom jogado nas lives.",                                category: "Campanhas e Lançamentos" },
+  { id: 74,  title: "Avowed",                       genre: "RPG",           platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2457220/header.jpg",  description: "RPG da Obsidian no universo Pillars of Eternity — jogado ao vivo.",              category: "Campanhas e Lançamentos" },
+  { id: 75,  title: "Atomfall",                     genre: "Aventura",      platform: "PC",     year: 2025, cover: "/images/atomfall.jpg",  description: "Survival britânico com mistério nuclear jogado no lançamento.",                   category: "Campanhas e Lançamentos" },
+  { id: 76,  title: "South of Midnight",            genre: "Aventura",      platform: "PC",     year: 2025, cover: "/images/south-of-midnight.jpg",  description: "Aventura folclórica do sul dos EUA jogada ao vivo.",                             category: "Campanhas e Lançamentos" },
+  { id: 77,  title: "Age of Mythology Retold",      genre: "Estratégia",    platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1934680/header.jpg",  description: "Remaster do clássico de estratégia com deuses e criaturas.",                     category: "Campanhas e Lançamentos" },
+  { id: 78,  title: "Age of Empires IV",            genre: "Estratégia",    platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1466860/header.jpg",  description: "Estratégia em tempo real como variação de conteúdo nas lives.",                  category: "Campanhas e Lançamentos" },
+  { id: 79,  title: "Split Fiction",                genre: "Cooperativo",   platform: "PC",     year: 2025, cover: "/images/split-fiction.jpg",  description: "Co-op narrativo dos criadores de It Takes Two — jogado no lançamento.",          category: "Campanhas e Lançamentos" },
+  { id: 80,  title: "Donkey Kong Bananza",          genre: "Ação",    platform: "Switch", year: 2025, cover: "/images/donkey-kong-bananza.jpg",                                                         description: "Exclusivo Nintendo Switch jogado ao vivo no lançamento.",                        category: "Campanhas e Lançamentos" },
+  { id: 81,  title: "Mario Kart World",             genre: "Corrida",       platform: "Switch", year: 2025, cover: "/images/mario-kart-world.jpg",                                                            description: "Novo Mario Kart para Switch 2 jogado ao vivo.",                                  category: "Campanhas e Lançamentos" },
 
-  // ── 👻 Terror e Sobrevivência ─────────────────────────────────
-  {
-    id: 26,
-    title: "Minecraft",
-    genre: "Sobrevivência", platform: "PC", year: 2012,
-    cover: "/images/minecraft.jpg",
-    description: "Primeiro grande sucesso do canal — série que construiu a base de fãs.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 27,
-    title: "Five Nights at Freddy's",
-    genre: "Terror", platform: "PC", year: 2014,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/header.jpg",
-    description: "Série de terror que viralizou e consolidou o Alan como referência no YouTube.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 28,
-    title: "Resident Evil Village",
-    genre: "Terror", platform: "PC", year: 2021,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/header.jpg",
-    description: "Gerou reações memoráveis, especialmente nas cenas da Lady Dimitrescu.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 29,
-    title: "Resident Evil 4 Remake",
-    genre: "Terror", platform: "PC", year: 2023,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg",
-    description: "Remake do clássico com muitas horas de live e reações do chat.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 30,
-    title: "Subnautica",
-    genre: "Sobrevivência", platform: "PC", year: 2018,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/264710/header.jpg",
-    description: "Sobrevivência submarina com momentos icônicos de susto no canal.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 31,
-    title: "Outlast",
-    genre: "Terror", platform: "PC", year: 2013,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238320/header.jpg",
-    description: "Terror clássico das raízes do canal no YouTube.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 32,
-    title: "Outlast Trials",
-    genre: "Terror", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1304930/header.jpg",
-    description: "Versão cooperativa da franquia Outlast jogada com amigos ao vivo.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 33,
-    title: "Amnesia: The Dark Descent",
-    genre: "Terror", platform: "PC", year: 2012,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/57300/header.jpg",
-    description: "Terror clássico que marcou a era dos sustos no YouTube brasileiro.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 34,
-    title: "Dead Space 2",
-    genre: "Terror", platform: "PC", year: 2012,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/47780/header.jpg",
-    description: "Sci-fi de terror que ajudou a definir o estilo do canal nos primeiros anos.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 35,
-    title: "Banishers: Ghosts of New Eden",
-    genre: "Terror", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1341820/header.jpg",
-    description: "Ação e terror com enredo marcante jogado em live em 2024.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 36,
-    title: "A Quiet Place: The Road Ahead",
-    genre: "Terror", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2737980/header.jpg",
-    description: "Terror baseado no universo do filme, jogado ao vivo no lançamento.",
-    category: "Terror e Sobrevivência"
-  },
-  {
-    id: 37,
-    title: "Animal Well",
-    genre: "Aventura", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813230/header.jpg",
-    description: "Metroidvania indie misterioso explorado ao vivo com muito chat analysis.",
-    category: "Terror e Sobrevivência"
-  },
+  // ══════════════════════════════════════════════════════
+  // 👻 TERROR E SOBREVIVÊNCIA
+  // ══════════════════════════════════════════════════════
+  { id: 82,  title: "Minecraft",                    genre: "Sobrevivência", platform: "PC",     year: 2012, cover: "/images/minecraft.jpg",                                                                   description: "Primeiro grande sucesso do canal — série que construiu a base de fãs.",          category: "Terror e Sobrevivência" },
+  { id: 83,  title: "Five Nights at Freddy's",      genre: "Terror",        platform: "PC",     year: 2014, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319510/header.jpg",   description: "O original que viralizou e consolidou o Alan no YouTube.",                       category: "Terror e Sobrevivência" },
+  { id: 84,  title: "FNaF 2",                       genre: "Terror",        platform: "PC",     year: 2014, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/332800/header.jpg",   description: "Sequência com animatrônicos ainda mais assustadores.",                           category: "Terror e Sobrevivência" },
+  { id: 85,  title: "FNaF 3",                       genre: "Terror",        platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/354140/header.jpg",   description: "Springtrap e novos mistérios da franquia.",                                      category: "Terror e Sobrevivência" },
+  { id: 86,  title: "FNaF 4",                       genre: "Terror",        platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388090/header.jpg",   description: "Pesadelos e a lore da franquia aprofundada.",                                    category: "Terror e Sobrevivência" },
+  { id: 87,  title: "FNaF: Sister Location",        genre: "Terror",        platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/506610/header.jpg",   description: "Circus Baby e Baby's Entertainment — franquia expandida.",                       category: "Terror e Sobrevivência" },
+  { id: 88,  title: "Freddy Fazbear's Pizzeria Simulator", genre: "Terror", platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/738060/header.jpg",   description: "FNaF 6 disfarçado de simulador de pizzaria.",                                    category: "Terror e Sobrevivência" },
+  { id: 89,  title: "FNaF: Security Breach",        genre: "Terror",        platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/747660/header.jpg",   description: "Versão 3D de mundo aberto da franquia FNaF.",                                    category: "Terror e Sobrevivência" },
+  { id: 90,  title: "FNaF: Into the Pit",           genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/fnaf-into-the-pit.jpg",  description: "Capítulo pixel art baseado nos livros oficiais.",                                category: "Terror e Sobrevivência" },
+  { id: 91,  title: "FNaF: Secret of the Mimic",   genre: "Terror",        platform: "PC",     year: 2025, cover: "/images/fnaf-secret-of-the-mimic.jpg",  description: "Capítulo mais recente da franquia jogado ao vivo.",                              category: "Terror e Sobrevivência" },
+  { id: 92,  title: "The Joy of Creation",          genre: "Terror",        platform: "PC",     year: 2016, cover: "/images/the-joy-of-creation.jpg",                                                         description: "Fangame FNaF com mecânicas únicas — muito popular nas lives.",                   category: "Terror e Sobrevivência" },
+  { id: 93,  title: "Resident Evil Village",        genre: "Terror",        platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1196590/header.jpg",  description: "Gerou reações memoráveis — especialmente Lady Dimitrescu.",                      category: "Terror e Sobrevivência" },
+  { id: 94,  title: "Resident Evil 4 Remake",       genre: "Terror",        platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg",  description: "Remake do clássico com muitas horas de live.",                                   category: "Terror e Sobrevivência" },
+  { id: 95,  title: "Resident Evil 3 Remake",       genre: "Terror",        platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/952060/header.jpg",   description: "Nemesis no remake moderno jogado ao vivo.",                                      category: "Terror e Sobrevivência" },
+  { id: 96,  title: "Resident Evil 2 Remake",       genre: "Terror",        platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/header.jpg",   description: "Remake do clássico de 1998 com Mr. X perseguindo em live.",                     category: "Terror e Sobrevivência" },
+  { id: 97,  title: "Resident Evil 7",              genre: "Terror",        platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418370/header.jpg",   description: "Reinvenção em primeira pessoa — muito susto nas lives.",                         category: "Terror e Sobrevivência" },
+  { id: 98,  title: "Resident Evil REMASTER",       genre: "Terror",        platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304240/header.jpg",   description: "O RE original remasterizado jogado ao vivo.",                                    category: "Terror e Sobrevivência" },
+  { id: 99,  title: "Resident Evil Requiem",        genre: "Terror",        platform: "PC",     year: 2025, cover: "/images/resident-evil-requiem.jpg",                                                       description: "Novo capítulo da franquia — Alanzoka ficou impressionado nas lives.",             category: "Terror e Sobrevivência" },
+  { id: 100, title: "Silent Hill 2 Remake",         genre: "Terror",        platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/header.jpg",  description: "Remake do terror psicológico clássico jogado no lançamento.",                    category: "Terror e Sobrevivência" },
+  { id: 101, title: "Silent Hill f",                genre: "Terror",        platform: "PC",     year: 2025, cover: "/images/silent-hill-f.jpg",                                                               description: "Novo capítulo da franquia Silent Hill no Japão dos anos 60.",                    category: "Terror e Sobrevivência" },
+  { id: 102, title: "Subnautica",                   genre: "Sobrevivência", platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/264710/header.jpg",   description: "Sobrevivência submarina com momentos icônicos de susto.",                        category: "Terror e Sobrevivência" },
+  { id: 103, title: "Subnautica 2",                 genre: "Sobrevivência", platform: "PC",     year: 2025, cover: "/images/subnautica-2.jpg",                                                                description: "Continuação do survival subaquático — jogado no Early Access.",                  category: "Terror e Sobrevivência" },
+  { id: 104, title: "The Forest",                   genre: "Sobrevivência", platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/header.jpg",   description: "Survival de terror em floresta com canibais jogado ao vivo.",                    category: "Terror e Sobrevivência" },
+  { id: 105, title: "Outlast",                      genre: "Terror",        platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238320/header.jpg",   description: "Terror clássico das raízes do canal no YouTube.",                                category: "Terror e Sobrevivência" },
+  { id: 106, title: "Outlast 2",                    genre: "Terror",        platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/414700/header.jpg",   description: "Segundo capítulo — campos de milho e terror psicológico.",                       category: "Terror e Sobrevivência" },
+  { id: 107, title: "Outlast Trials",               genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/outlast-trials.jpg",  description: "Versão cooperativa da franquia jogada com amigos.",                              category: "Terror e Sobrevivência" },
+  { id: 108, title: "Amnesia: The Dark Descent",    genre: "Terror",        platform: "PC",     year: 2012, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/57300/header.jpg",    description: "Terror clássico que marcou a era dos sustos no YouTube brasileiro.",             category: "Terror e Sobrevivência" },
+  { id: 109, title: "Amnesia: A Machine For Pigs",  genre: "Terror",        platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239200/header.jpg",   description: "Continuação do Amnesia com atmosfera industrial.",                               category: "Terror e Sobrevivência" },
+  { id: 110, title: "Amnesia: Rebirth",             genre: "Terror",        platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/999220/header.jpg",   description: "Terceiro capítulo oficial da franquia Amnesia.",                                 category: "Terror e Sobrevivência" },
+  { id: 111, title: "Dead Space 2",                 genre: "Terror",        platform: "PC",     year: 2011, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/47780/header.jpg",    description: "Sci-fi de terror que ajudou a definir o estilo do canal.",                      category: "Terror e Sobrevivência" },
+  { id: 112, title: "Poppy Playtime",               genre: "Terror",        platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1721470/header.jpg",  description: "Terror indie viral com Huggy Wuggy — todos os capítulos ao vivo.",               category: "Terror e Sobrevivência" },
+  { id: 113, title: "Granny",                       genre: "Terror",        platform: "PC",     year: 2019, cover: "/images/granny.jpg",   description: "Terror de fuga da avó assustadora — muito susto e risadas.",                    category: "Terror e Sobrevivência" },
+  { id: 114, title: "My Friendly Neighborhood",     genre: "Terror",        platform: "PC",     year: 2023, cover: "/images/my-friendly-neighborhood.jpg",  description: "Terror estilo FNaF em um programa infantil abandonado.",                         category: "Terror e Sobrevivência" },
+  { id: 115, title: "The Painscreek Killings",      genre: "Terror",        platform: "PC",     year: 2017, cover: "/images/the-painscreek-killings.jpg",   description: "Investigação de assassinato em primeira pessoa — thriller tenso.",               category: "Terror e Sobrevivência" },
+  { id: 116, title: "Banishers: Ghosts of New Eden",genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/banishers.jpg",  description: "Ação e terror com enredo marcante jogado em live.",                              category: "Terror e Sobrevivência" },
+  { id: 117, title: "A Quiet Place: The Road Ahead",genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/a-quiet-place.jpg",                                                               description: "Terror baseado no universo do filme, jogado ao vivo.",                           category: "Terror e Sobrevivência" },
+  { id: 118, title: "Alien: Isolation",             genre: "Terror",        platform: "PC",     year: 2014, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/214490/header.jpg",   description: "Survival horror de Alien com tensão extrema nas lives.",                         category: "Terror e Sobrevivência" },
+  { id: 119, title: "Alien: Rogue Incursion",       genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/alien-rogue-incursion.jpg",  description: "Novo jogo do universo Alien jogado ao vivo.",                                    category: "Terror e Sobrevivência" },
+  { id: 120, title: "Visage",                       genre: "Terror",        platform: "PC",     year: 2020, cover: "/images/visage.jpg",  description: "Terror psicológico inspirado em P.T. jogado ao vivo.",                           category: "Terror e Sobrevivência" },
+  { id: 121, title: "SOMA",                         genre: "Terror",        platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/282140/header.jpg",   description: "Sci-fi filosófico e assustador da Frictional Games.",                           category: "Terror e Sobrevivência" },
+  { id: 122, title: "Darkwood",                     genre: "Terror",        platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/274520/header.jpg",   description: "Survival horror top-down sombrio e atmosférico.",                                category: "Terror e Sobrevivência" },
+  { id: 123, title: "Cry of Fear",                  genre: "Terror",        platform: "PC",     year: 2013, cover: "/images/cry-of-fear.jpg",   description: "Mod de Half-Life que virou jogo completo — terror gratuito.",                    category: "Terror e Sobrevivência" },
+  { id: 124, title: "Slender: The Arrival",         genre: "Terror",        platform: "PC",     year: 2013, cover: "/images/slender-the-arrival.jpg",   description: "O mítico Slenderman em formato de jogo jogado ao vivo.",                         category: "Terror e Sobrevivência" },
+  { id: 125, title: "Bendy and the Ink Machine",    genre: "Terror",        platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/622650/header.jpg",   description: "Terror de estúdio de animação dos anos 30 jogado ao vivo.",                     category: "Terror e Sobrevivência" },
+  { id: 126, title: "Hello Neighbor",               genre: "Terror",        platform: "PC",     year: 2017, cover: "/images/hello-neighbor.jpg",   description: "Stealth de terror com o vizinho misterioso.",                                    category: "Terror e Sobrevivência" },
+  { id: 127, title: "Little Nightmares",            genre: "Terror",        platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/424840/header.jpg",   description: "Plataforma de terror com atmosfera opressiva.",                                  category: "Terror e Sobrevivência" },
+  { id: 128, title: "Layers of Fear",               genre: "Terror",        platform: "PC",     year: 2023, cover: "/images/layers-of-fear.jpg",   description: "Terror psicológico no mundo de um pintor perturbado.",                           category: "Terror e Sobrevivência" },
+  { id: 129, title: "Mouthwashing",                 genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/mouthwashing.jpg",  description: "Terror indie perturbador — um dos maiores fenômenos de 2024.",                   category: "Terror e Sobrevivência" },
+  { id: 130, title: "Zoochosis",                    genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/zoochosis.jpg",  description: "Terror indie de zoológico perturbador jogado ao vivo.",                          category: "Terror e Sobrevivência" },
+  { id: 131, title: "The Casting of Frank Stone",   genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/the-casting-of-frank-stone.jpg",  description: "Jogo narrativo no universo de Dead by Daylight.",                                category: "Terror e Sobrevivência" },
+  { id: 132, title: "Fears to Fathom",              genre: "Terror",        platform: "PC",     year: 2022, cover: "/images/fears-to-fathom.jpg",  description: "Série de terror baseada em histórias reais jogada em live.",                     category: "Terror e Sobrevivência" },
+  { id: 133, title: "Amanda the Adventurer",        genre: "Terror",        platform: "PC",     year: 2023, cover: "/images/amanda-the-adventurer.jpg",  description: "Terror de fita VHS com personagem infantil perturbadora.",                       category: "Terror e Sobrevivência" },
+  { id: 134, title: "That's Not My Neighbor",       genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/thats-not-my-neighbor.jpg",  description: "Terror de detetive de portaria — viral na Twitch.",                              category: "Terror e Sobrevivência" },
+  { id: 135, title: "Buckshot Roulette",            genre: "Terror",        platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2835570/header.jpg",  description: "Roleta russa perturbadora — fenômeno indie de 2024.",                            category: "Terror e Sobrevivência" },
+  { id: 136, title: "R.E.P.O",                      genre: "Terror",        platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/header.jpg",  description: "Co-op de terror de coleta — viral na Twitch em 2025.",                          category: "Terror e Sobrevivência" },
+  { id: 137, title: "Liar's Bar",                   genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/liars-bar.jpg",  description: "Blefe e tensão — fenômeno multijogador de 2024.",                                category: "Terror e Sobrevivência" },
+  { id: 138, title: "Dying Light",                  genre: "Sobrevivência", platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239140/header.jpg",   description: "Parkour e zumbis — survival que apareceu nas lives.",                            category: "Terror e Sobrevivência" },
+  { id: 139, title: "Project Zomboid",              genre: "Sobrevivência", platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg",   description: "Survival isométrico de zumbis jogado em live.",                                  category: "Terror e Sobrevivência" },
+  { id: 140, title: "Pacific Drive",                genre: "Sobrevivência", platform: "PC",     year: 2024, cover: "/images/pacific-drive.jpg",  description: "Survival de carro em zona de exclusão sobrenatural.",                            category: "Terror e Sobrevivência" },
+  { id: 141, title: "Still Wakes the Deep",         genre: "Terror",        platform: "PC",     year: 2024, cover: "/images/still-wakes-the-deep.jpg",  description: "Terror em plataforma petrolífera — muito atmosférico.",                          category: "Terror e Sobrevivência" },
+  { id: 142, title: "Rule of Rose",                 genre: "Terror",        platform: "PS2",    year: 2006, cover: "/images/rule-of-rose.jpg",                                                                description: "Raro clássico de terror PS2 jogado no canal.",                                   category: "Terror e Sobrevivência" },
+  { id: 143, title: "Dino Crisis",                  genre: "Terror",        platform: "PC",     year: 1999, cover: "/images/dino-crisis.jpg",                                                                 description: "Clássico de terror da Capcom com dinossauros.",                                  category: "Terror e Sobrevivência" },
 
-  // ── 🤝 Cooperativos ───────────────────────────────────────────
-  {
-    id: 38,
-    title: "Helldivers 2",
-    genre: "Cooperativo", platform: "PC", year: 2024,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg",
-    description: "Maior sucesso cooperativo de 2024, jogado com amigos streamers.",
-    category: "Cooperativos"
-  },
-  {
-    id: 39,
-    title: "Lethal Company",
-    genre: "Cooperativo", platform: "PC", year: 2023,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/header.jpg",
-    description: "Indie de terror cooperativo que explodiu na Twitch em 2023.",
-    category: "Cooperativos"
-  },
-  {
-    id: 40,
-    title: "Sea of Thieves",
-    genre: "Cooperativo", platform: "PC", year: 2018,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172620/header.jpg",
-    description: "Aventura pirata cooperativa com outros criadores de conteúdo.",
-    category: "Cooperativos"
-  },
-  {
-    id: 41,
-    title: "Among Us",
-    genre: "Cooperativo", platform: "PC", year: 2020,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/945360/header.jpg",
-    description: "Fenômeno da pandemia, jogado com grandes criadores brasileiros.",
-    category: "Cooperativos"
-  },
-  {
-    id: 42,
-    title: "Oxygen Not Included",
-    genre: "Cooperativo", platform: "PC", year: 2019,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/457140/header.jpg",
-    description: "Simulador de colônia espacial em formato cooperativo nas lives.",
-    category: "Cooperativos"
-  },
-  {
-    id: 43,
-    title: "A Way Out",
-    genre: "Cooperativo", platform: "PC", year: 2018,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222700/header.jpg",
-    description: "Co-op narrativo de fuga jogado com outro streamer ao vivo.",
-    category: "Cooperativos"
-  },
-  {
-    id: 44,
-    title: "Phasmophobia",
-    genre: "Cooperativo", platform: "PC", year: 2020,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/739630/header.jpg",
-    description: "Caça-fantasmas cooperativo com muitos sustos e gargalhadas no chat.",
-    category: "Cooperativos"
-  },
-  {
-    id: 45,
-    title: "It Takes Two",
-    genre: "Cooperativo", platform: "PC", year: 2021,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/header.jpg",
-    description: "Co-op premiado jogado em live com parceiro, enredo emocionante.",
-    category: "Cooperativos"
-  },
-  {
-    id: 46,
-    title: "Devour",
-    genre: "Cooperativo", platform: "PC", year: 2021,
-    cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1274570/header.jpg",
-    description: "Terror cooperativo intenso que gerou momentos virais no canal.",
-    category: "Cooperativos"
-  },
+  // ══════════════════════════════════════════════════════
+  // 🕹️ INDIES E ESPECIAIS
+  // ══════════════════════════════════════════════════════
+  { id: 144, title: "Hollow Knight",                genre: "Indie",         platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/header.jpg",   description: "Metroidvania indie aclamado — exploração profunda em live.",                    category: "Indies e Especiais" },
+  { id: 145, title: "Hollow Knight: Silksong",      genre: "Indie",         platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1030300/header.jpg",  description: "Sequência muito esperada — jogada ao vivo no lançamento.",                       category: "Indies e Especiais" },
+  { id: 146, title: "Hades II",                     genre: "Indie",         platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145350/header.jpg",  description: "Roguelike da Supergiant que dominou a Twitch no Early Access.",                  category: "Indies e Especiais" },
+  { id: 147, title: "Inside",                       genre: "Indie",         platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304430/header.jpg",   description: "Plataforma sombrio e misterioso da Playdead jogado ao vivo.",                    category: "Indies e Especiais" },
+  { id: 148, title: "Animal Well",                  genre: "Indie",         platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/813230/header.jpg",   description: "Metroidvania misterioso explorado ao vivo com o chat.",                          category: "Indies e Especiais" },
+
+  { id: 150, title: "Pico Park",                    genre: "Puzzle",        platform: "PC",     year: 2021, cover: "/images/pico-park.jpg",  description: "Puzzle cooperativo caótico com amigos streamers.",                               category: "Indies e Especiais" },
+  { id: 151, title: "Pico Park 2",                  genre: "Puzzle",        platform: "PC",     year: 2024, cover: "/images/pico-park-2.jpg",  description: "Sequência do caos cooperativo — ainda mais puzzle e gritaria.",                  category: "Indies e Especiais" },
+  { id: 152, title: "Castlevania Anniversary Collection", genre: "Indie",   platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1018010/header.jpg",  description: "Coleção com os Castlevanias clássicos jogados em live.",                         category: "Indies e Especiais" },
+  { id: 153, title: "Castlevania: Lords of Shadow", genre: "Ação",          platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/234080/header.jpg",   description: "Reboot 3D da franquia Castlevania jogado ao vivo.",                              category: "Indies e Especiais" },
+  { id: 154, title: "Castlevania: Lords of Shadow 2", genre: "Ação",        platform: "PC",     year: 2014, cover: "/images/castlevania-los-2.jpg",   description: "Conclusão da saga de Gabriel Belmont.",                                          category: "Indies e Especiais" },
+  { id: 155, title: "Raft",                         genre: "Sobrevivência", platform: "PC",     year: 2022, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/header.jpg",   description: "Survival em jangada no oceano — sessões cooperativas divertidas.",               category: "Indies e Especiais" },
+
+  { id: 157, title: "Balatro",                      genre: "Indie",         platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2379780/header.jpg",  description: "Roguelike de poker que viciou streamers do mundo todo.",                         category: "Indies e Especiais" },
+  { id: 158, title: "Cuphead",                      genre: "Indie",         platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/header.jpg",   description: "Run and gun difícil com arte anos 30 — reações icônicas nas lives.",             category: "Indies e Especiais" },
+  { id: 159, title: "Undertale",                    genre: "Indie",         platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391540/header.jpg",   description: "RPG indie cult com narrativa única e final emocional.",                          category: "Indies e Especiais" },
+  { id: 160, title: "Firewatch",                    genre: "Indie",         platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/383870/header.jpg",   description: "Walking sim narrativo em floresta — jogado em live.",                            category: "Indies e Especiais" },
+  { id: 161, title: "What Remains of Edith Finch",  genre: "Indie",         platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/501300/header.jpg",   description: "Walking sim emocionante sobre uma família — muito elogiado.",                    category: "Indies e Especiais" },
+  { id: 162, title: "Doki Doki Literature Club",    genre: "Indie",         platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/698780/header.jpg",   description: "Visual novel que surpreende com terror psicológico.",                            category: "Indies e Especiais" },
+  { id: 163, title: "Sally Face",                   genre: "Indie",         platform: "PC",     year: 2019, cover: "/images/sally-face.jpg",   description: "Aventura episódica sombria com personagem icônico.",                             category: "Indies e Especiais" },
+  { id: 164, title: "OneShot",                      genre: "Indie",         platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/420530/header.jpg",   description: "RPG indie com mecânicas únicas que quebram a quarta parede.",                    category: "Indies e Especiais" },
+  { id: 165, title: "Oxenfree",                     genre: "Indie",         platform: "PC",     year: 2016, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388880/header.jpg",   description: "Aventura sobrenatural com diálogos únicos jogada ao vivo.",                      category: "Indies e Especiais" },
+  { id: 166, title: "Fran Bow",                     genre: "Indie",         platform: "PC",     year: 2015, cover: "/images/fran-bow.jpg",   description: "Aventura sombria de uma garotinha perturbada.",                                  category: "Indies e Especiais" },
+  { id: 167, title: "Life is Strange",              genre: "Indie",         platform: "PC",     year: 2015, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319630/header.jpg",   description: "Aventura narrativa com manipulação do tempo — muito emocional.",                 category: "Indies e Especiais" },
+  { id: 168, title: "Life is Strange 2",            genre: "Indie",         platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/532210/header.jpg",   description: "Sequência com dois irmãos em fuga — jogado ao vivo.",                           category: "Indies e Especiais" },
+  { id: 169, title: "Detroit: Become Human",        genre: "Indie",         platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222140/header.jpg",  description: "Jogo narrativo de androides — decisões que emocionaram o chat.",                 category: "Indies e Especiais" },
+  { id: 170, title: "Heavy Rain",                   genre: "Indie",         platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/960910/header.jpg",   description: "Thriller narrativo da Quantic Dream jogado ao vivo.",                            category: "Indies e Especiais" },
+  { id: 171, title: "Papers Please",                genre: "Indie",         platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239030/header.jpg",   description: "Simulador de inspeção de fronteira soviética — cult indie.",                     category: "Indies e Especiais" },
+  { id: 172, title: "Hellblade: Senua's Sacrifice", genre: "Indie",         platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/414340/header.jpg",   description: "Action com psicose e mitologia nórdica — muito elogiado.",                       category: "Indies e Especiais" },
+  { id: 173, title: "Senua's Saga: Hellblade 2",    genre: "Ação",          platform: "PC",     year: 2024, cover: "/images/hellblade-2.jpg",  description: "Visualmente impressionante — jogado ao vivo no lançamento.",                     category: "Indies e Especiais" },
+  { id: 174, title: "MiSide",                       genre: "Terror",        platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2527500/header.jpg",  description: "Indie de terror com waifus perturbadoras — viral na Twitch.",                    category: "Indies e Especiais" },
+  { id: 175, title: "Content Warning",              genre: "Indie",         platform: "PC",     year: 2024, cover: "/images/content-warning.jpg",  description: "Co-op de gravar monstros para redes sociais — viral em 2024.",                  category: "Indies e Especiais" },
+  { id: 176, title: "Chained Together",             genre: "Indie",         platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2567870/header.jpg",  description: "Plataforma cooperativo onde todos ficam acorrentados — muito caos.",             category: "Indies e Especiais" },
+  { id: 177, title: "Frostpunk 2",                  genre: "Estratégia",    platform: "PC",     year: 2024, cover: "/images/frostpunk-2.jpg",  description: "City builder de sobrevivência no gelo — jogado nas lives.",                      category: "Indies e Especiais" },
+  { id: 178, title: "V Rising",                     genre: "Sobrevivência", platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1604030/header.jpg",  description: "Survival de vampiro — jogado em sessões cooperativas.",                          category: "Indies e Especiais" },
+  { id: 179, title: "Manor Lords",                  genre: "Estratégia",    platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1363080/header.jpg",  description: "City builder medieval que dominou a Steam no lançamento.",                       category: "Indies e Especiais" },
+  { id: 180, title: "Path of Exile 2",              genre: "RPG",           platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/header.jpg",  description: "ARPG que dominou a Twitch no Early Access.",                                     category: "Indies e Especiais" },
+  { id: 181, title: "Dune: Awakening",              genre: "Sobrevivência", platform: "PC",     year: 2025, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/header.jpg",  description: "Survival MMO no universo Dune — jogado nas lives.",                              category: "Indies e Especiais" },
+  { id: 182, title: "Abiotic Factor",               genre: "Sobrevivência", platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427410/header.jpg",   description: "Survival co-op em bunker secreto — muito divertido nas lives.",                  category: "Indies e Especiais" },
+  { id: 183, title: "No Rest for the Wicked",       genre: "RPG",           platform: "PC",     year: 2024, cover: "/images/no-rest-for-the-wicked.jpg",  description: "Action RPG da Moon Studios jogado no Early Access.",                             category: "Indies e Especiais" },
+
+  // ══════════════════════════════════════════════════════
+  // 🤝 COOPERATIVOS
+  // ══════════════════════════════════════════════════════
+  { id: 184, title: "Helldivers 2",                 genre: "Cooperativo",   platform: "PC",     year: 2024, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg",   description: "Maior sucesso cooperativo de 2024 — jogado com amigos streamers.",              category: "Cooperativos" },
+  { id: 185, title: "Lethal Company",               genre: "Cooperativo",   platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/header.jpg",  description: "Indie de terror cooperativo que explodiu na Twitch em 2023.",                    category: "Cooperativos" },
+  { id: 186, title: "Sea of Thieves",               genre: "Cooperativo",   platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172620/header.jpg",  description: "Aventura pirata cooperativa com outros criadores.",                              category: "Cooperativos" },
+  { id: 187, title: "Among Us",                     genre: "Cooperativo",   platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/945360/header.jpg",   description: "Fenômeno da pandemia com grandes criadores brasileiros.",                        category: "Cooperativos" },
+  { id: 188, title: "Phasmophobia",                 genre: "Cooperativo",   platform: "PC",     year: 2020, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/739630/header.jpg",   description: "Caça-fantasmas com sustos e risadas — clássico do canal.",                       category: "Cooperativos" },
+  { id: 189, title: "It Takes Two",                 genre: "Cooperativo",   platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/header.jpg",  description: "Co-op premiado com enredo emocionante.",                                         category: "Cooperativos" },
+  { id: 190, title: "A Way Out",                    genre: "Cooperativo",   platform: "PC",     year: 2018, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222700/header.jpg",  description: "Co-op narrativo de fuga da prisão.",                                             category: "Cooperativos" },
+  { id: 191, title: "Oxygen Not Included",          genre: "Cooperativo",   platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/457140/header.jpg",   description: "Simulador de colônia espacial em formato cooperativo.",                          category: "Cooperativos" },
+  { id: 192, title: "Devour",                       genre: "Cooperativo",   platform: "PC",     year: 2021, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1274570/header.jpg",  description: "Terror cooperativo intenso com momentos virais.",                                category: "Cooperativos" },
+  { id: 193, title: "Left 4 Dead 2",                genre: "Cooperativo",   platform: "PC",     year: 2009, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/header.jpg",       description: "Co-op de zumbis clássico que apareceu em lives do canal.",                       category: "Cooperativos" },
+  { id: 194, title: "Payday 2",                     genre: "Cooperativo",   platform: "PC",     year: 2013, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/218620/header.jpg",   description: "Heist cooperativo com assaltos planejados ao vivo.",                             category: "Cooperativos" },
+
+  { id: 196, title: "Barotrauma",                   genre: "Cooperativo",   platform: "PC",     year: 2023, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/602960/header.jpg",   description: "Co-op em submarino com criaturas — muito caótico nas lives.",                    category: "Cooperativos" },
+  { id: 197, title: "No More Room in Hell 2",       genre: "Cooperativo",   platform: "PC",     year: 2024, cover: "/images/no-more-room-in-hell-2.jpg",  description: "Survival cooperativo de zumbis jogado ao vivo.",                                 category: "Cooperativos" },
+  { id: 198, title: "FragPunk",                     genre: "Cooperativo",   platform: "PC",     year: 2025, cover: "/images/fragpunk.jpg",  description: "Hero shooter cooperativo jogado no lançamento.",                                 category: "Cooperativos" },
+  { id: 199, title: "Mario Party Jamboree",         genre: "Cooperativo",   platform: "Switch", year: 2024, cover: "/images/mario-party-jamboree.jpg",                                                        description: "Party game Nintendo jogado com amigos nas lives.",                               category: "Cooperativos" },
+  { id: 200, title: "Death Stranding",              genre: "Aventura",      platform: "PC",     year: 2020, cover: "/images/death-stranding.jpg",  description: "Hideo Kojima conectando os EUA — jogado do início ao fim.",                     category: "Campanhas e Lançamentos" },
 ];
 
 export default games;
