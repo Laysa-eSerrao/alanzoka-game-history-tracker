@@ -227,7 +227,6 @@ const games = [
   // ══════════════════════════════════════════════════════
   // 🎬 CAMPANHAS — ADICIONADOS
   // ══════════════════════════════════════════════════════
-  { id: 201, title: "Sekiro",                       genre: "RPG",           platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg",   description: "Soulslike ninja da FromSoftware com boss fights épicos.",                       category: "Campanhas e Lançamentos" },
   { id: 202, title: "Bloodborne",                   genre: "RPG",           platform: "PS4",    year: 2015, cover: "/images/bloodborne.jpg",                                                                  description: "Soulslike gótico exclusivo PS4 — jogado nas lives.",                             category: "Campanhas e Lançamentos" },
   { id: 203, title: "Nier: Automata",               genre: "RPG",           platform: "PC",     year: 2017, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/524220/header.jpg",   description: "Action RPG filosófico com 2B — jogado ao vivo.",                                 category: "Campanhas e Lançamentos" },
   { id: 204, title: "Control",                      genre: "Ação",          platform: "PC",     year: 2019, cover: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/870780/header.jpg",   description: "Ação sobrenatural no Federal Bureau of Control.",                                category: "Campanhas e Lançamentos" },
