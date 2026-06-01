@@ -47,7 +47,7 @@ function Card({ game }) {
         ) : (
           <img
             className="card-img"
-            src={game.cover}
+            src={game.cover.startsWith('/') ? `${process.env.PUBLIC_URL}${game.cover}` : game.cover}
             alt={game.title}
             onError={() => setImgErr(true)}
           />
@@ -132,7 +132,7 @@ export default function App() {
       <div className="sticky-top">
         <div className="header-inner">
           <div className="logo-area">
-            <img src="/images/alanzoka.jpg" alt="Alanzoka" className="logo-icon" />
+            <img src={`${process.env.PUBLIC_URL}/images/alanzoka.jpg`} alt="Alanzoka" className="logo-icon" />
             <div>
               <h1 className="logo-title">Alanzoka</h1>
               <p className="logo-sub">Game History Tracker</p>
