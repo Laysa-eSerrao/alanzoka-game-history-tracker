@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/alanzoka-game-history-tracker/static/css/main.39fa8b2e.css",
-    "main.js": "/alanzoka-game-history-tracker/static/js/main.30e36e2c.js",
+    "main.js": "/alanzoka-game-history-tracker/static/js/main.df7f45e3.js",
     "static/js/453.3b232eba.chunk.js": "/alanzoka-game-history-tracker/static/js/453.3b232eba.chunk.js",
     "index.html": "/alanzoka-game-history-tracker/index.html",
     "main.39fa8b2e.css.map": "/alanzoka-game-history-tracker/static/css/main.39fa8b2e.css.map",
-    "main.30e36e2c.js.map": "/alanzoka-game-history-tracker/static/js/main.30e36e2c.js.map",
+    "main.df7f45e3.js.map": "/alanzoka-game-history-tracker/static/js/main.df7f45e3.js.map",
     "453.3b232eba.chunk.js.map": "/alanzoka-game-history-tracker/static/js/453.3b232eba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.39fa8b2e.css",
-    "static/js/main.30e36e2c.js"
+    "static/js/main.df7f45e3.js"
   ]
 }
