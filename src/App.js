@@ -1,56 +1,135 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import games from "./games";
 import "./App.css";
 
-function App() {
-  const [search, setSearch]         = useState("");
-  const [genreFilter, setGenre]     = useState("Todos");
-  const [yearFilter, setYear]       = useState("Todos");
-  const [categoryFilter, setCategory] = useState("Todas");
-  const [imgErrors, setImgErrors]   = useState({});
+const genreColors = {
+  "Terror":        "#e05252", "FPS":           "#e07a30",
+  "Battle Royale": "#d4a017", "RPG":           "#9147ff",
+  "Sobrevivência": "#3db87a", "Cooperativo":   "#00b8d9",
+  "Ação":          "#ff4aba", "Aventura":      "#00c896",
+  "Esportes":      "#00b4e4", "Estratégia":    "#7ec8e3",
+  "Simulação":     "#a0c4ff", "Indie":         "#b580ff",
+  "Puzzle":        "#ffd166", "Plataforma":    "#06d6a0",
+  "Corrida":       "#ff6b35", "MOBA":          "#52b788",
+  "Luta":          "#e63946",
+};
 
-  const genres = ["Todos", ...new Set(games.map(g => g.genre))].sort((a, b) =>
-    a === "Todos" ? -1 : b === "Todos" ? 1 : a.localeCompare(b)
+const categoryIcons = {
+  "Mais Transmitidos":       "🏆",
+  "Campanhas e Lançamentos": "🎬",
+  "Terror e Sobrevivência":  "👻",
+  "Indies e Especiais":      "🕹️",
+  "Cooperativos":            "🤝",
+};
+
+function ScoreBar({ score }) {
+  if (!score) return <span className="score-na">N/A</span>;
+  const color = score >= 85 ? "#3db87a" : score >= 70 ? "#d4a017" : "#e05252";
+  return (
+    <div className="score-wrap">
+      <span className="score-num" style={{ color }}>{score}</span>
+      <div className="score-bar">
+        <div className="score-fill" style={{ width: `${score}%`, background: color }} />
+      </div>
+    </div>
   );
-  const years = ["Todos", ...new Set(games.map(g => String(g.year)))].sort((a, b) =>
-    a === "Todos" ? -1 : b === "Todos" ? 1 : Number(a) - Number(b)
+}
+
+function Card({ game }) {
+  const [open, setOpen]     = useState(false);
+  const [imgErr, setImgErr] = useState(false);
+
+  return (
+    <div className={`card ${open ? "card--open" : ""}`} onClick={() => setOpen(o => !o)}>
+      <div className="card-img-wrap">
+        {imgErr ? (
+          <div className="card-img-fallback">🎮</div>
+        ) : (
+          <img
+            className="card-img"
+            src={game.cover}
+            alt={game.title}
+            onError={() => setImgErr(true)}
+          />
+        )}
+        <span className="genre-badge" style={{ background: genreColors[game.genre] || "#555" }}>
+          {game.genre}
+        </span>
+        {game.platform !== "PC" && (
+          <span className="platform-badge">{game.platform}</span>
+        )}
+      </div>
+
+      <div className="card-body">
+        <h2 className="card-title">{game.title}</h2>
+        <p className="card-meta">{game.year}</p>
+        <p className="card-desc">{game.description}</p>
+      </div>
+
+      {/* Expanded section */}
+      {open && (
+        <div className="card-expanded" onClick={e => e.stopPropagation()}>
+          <div className="expanded-row">
+            <div className="expanded-block">
+              <span className="exp-label">Metacritic</span>
+              <ScoreBar score={game.score} />
+            </div>
+            <div className="expanded-block">
+              <span className="exp-label">Categoria</span>
+              <span className="exp-value">{categoryIcons[game.category]} {game.category}</span>
+            </div>
+          </div>
+          {game.playlist ? (
+            <a
+              className="playlist-btn"
+              href={game.playlist}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>▶</span> Ver playlist no YouTube
+            </a>
+          ) : (
+            <p className="no-playlist">Playlist não disponível</p>
+          )}
+          <button className="close-btn" onClick={() => setOpen(false)}>✕ Fechar</button>
+        </div>
+      )}
+    </div>
   );
-  const categories = ["Todas", ...new Set(games.map(g => g.category))];
+}
 
-  const filtered = games.filter(game => {
-    const matchSearch   = game.title.toLowerCase().includes(search.toLowerCase());
-    const matchGenre    = genreFilter    === "Todos"  || game.genre     === genreFilter;
-    const matchYear     = yearFilter     === "Todos"  || String(game.year) === yearFilter;
-    const matchCategory = categoryFilter === "Todas"  || game.category  === categoryFilter;
-    return matchSearch && matchGenre && matchYear && matchCategory;
-  });
+export default function App() {
+  const [search, setSearch]     = useState("");
+  const [genre, setGenre]       = useState("Todos");
+  const [year, setYear]         = useState("Todos");
+  const [category, setCategory] = useState("Todas");
 
-  const genreColors = {
-    "Terror":        "#e05252",
-    "FPS":           "#e07a52",
-    "Battle Royale": "#d4a017",
-    "RPG":           "#7a52e0",
-    "Sobrevivência": "#52a06e",
-    "Cooperativo":   "#5299e0",
-    "Ação":          "#e05299",
-    "Aventura":      "#3db8a0",
-    "Esportes":      "#52c0e0",
-    "Puzzle":        "#e0b052",
-    "Estratégia":    "#52e0c0",
-    "Indie":         "#a852e0",
-  };
+  const genres = useMemo(() =>
+    ["Todos", ...new Set(games.map(g => g.genre))].sort((a,b) =>
+      a === "Todos" ? -1 : b === "Todos" ? 1 : a.localeCompare(b)), []);
 
-  const categoryIcons = {
-    "Mais Transmitidos":       "🏆",
-    "Campanhas e Lançamentos": "🎬",
-    "Terror e Sobrevivência":  "👻",
-    "Cooperativos":            "🤝",
-    "Indies e Especiais":      "🕹️",
-  };
+  const years = useMemo(() =>
+    ["Todos", ...new Set(games.map(g => String(g.year)))].sort((a,b) =>
+      a === "Todos" ? -1 : b === "Todos" ? 1 : Number(a) - Number(b)), []);
+
+  const categories = useMemo(() =>
+    ["Todas", ...new Set(games.map(g => g.category))], []);
+
+  const filtered = useMemo(() => games.filter(g => {
+    const q = search.toLowerCase();
+    return (
+      (!q || g.title.toLowerCase().includes(q) || g.genre.toLowerCase().includes(q)) &&
+      (genre    === "Todos" || g.genre    === genre) &&
+      (year     === "Todos" || String(g.year) === year) &&
+      (category === "Todas" || g.category === category)
+    );
+  }), [search, genre, year, category]);
+
+  const hasFilter = search || genre !== "Todos" || year !== "Todos" || category !== "Todas";
 
   return (
     <div className="app">
-      <header className="header">
+      <div className="sticky-top">
         <div className="header-inner">
           <div className="logo-area">
             <img src="/images/alanzoka.jpg" alt="Alanzoka" className="logo-icon" />
@@ -59,84 +138,59 @@ function App() {
               <p className="logo-sub">Game History Tracker</p>
             </div>
           </div>
-          <p className="header-count">{filtered.length} jogo{filtered.length !== 1 ? "s" : ""}</p>
+          <span className="header-count">{filtered.length} jogos</span>
         </div>
-      </header>
+
+        <div className="filters-wrap">
+          <div className="tabs">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`tab ${category === cat ? "tab--active" : ""}`}
+                onClick={() => setCategory(cat)}
+              >
+                <span>{cat !== "Todas" ? `${categoryIcons[cat] || ""} ${cat}` : "✦ Todas"}</span>
+              </button>
+            ))}
+          </div>
+          <div className="filters">
+            <div className="search-wrap">
+              <span className="search-icon">🔍</span>
+              <input
+                className="search"
+                type="text"
+                placeholder="Buscar jogo ou gênero..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+              />
+              {search && <button className="clear-btn" onClick={() => setSearch("")}>✕</button>}
+            </div>
+            <select className="select" value={genre} onChange={e => setGenre(e.target.value)}>
+              {genres.map(g => <option key={g}>{g}</option>)}
+            </select>
+            <select className="select" value={year} onChange={e => setYear(e.target.value)}>
+              {years.map(y => <option key={y}>{y}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
 
       <main className="main">
-        {/* Category tabs */}
-        <div className="tabs">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              className={`tab ${categoryFilter === cat ? "tab--active" : ""}`}
-              onClick={() => setCategory(cat)}
-            >
-              {cat !== "Todas" && categoryIcons[cat] ? `${categoryIcons[cat]} ` : ""}{cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Filters */}
-        <div className="filters">
-          <div className="search-wrap">
-            <span className="search-icon">🔍</span>
-            <input
-              className="search"
-              type="text"
-              placeholder="Buscar jogo..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-            />
-            {search && (
-              <button className="clear-btn" onClick={() => setSearch("")}>✕</button>
-            )}
+        {hasFilter && (
+          <div className="results-bar">
+            <p className="results-text">
+              <strong>{filtered.length}</strong> resultado{filtered.length !== 1 ? "s" : ""}
+              {search && <> para "<strong>{search}</strong>"</>}
+            </p>
           </div>
-          <select className="select" value={genreFilter} onChange={e => setGenre(e.target.value)}>
-            {genres.map(g => <option key={g}>{g}</option>)}
-          </select>
-          <select className="select" value={yearFilter} onChange={e => setYear(e.target.value)}>
-            {years.map(y => <option key={y}>{y}</option>)}
-          </select>
-        </div>
+        )}
 
         {filtered.length === 0 ? (
-          <div className="empty">
-            <span>🕹️</span>
-            <p>Nenhum jogo encontrado com esses filtros.</p>
-          </div>
+          <div className="empty"><span>🕹️</span><p>Nenhum jogo encontrado.</p></div>
         ) : (
           <div className="grid">
             {filtered.map((game, i) => (
-              <div
-                className="card"
-                key={game.id}
-                style={{ animationDelay: `${i * 30}ms` }}
-              >
-                <div className="card-img-wrap">
-                  {imgErrors[game.id] ? (
-                    <div className="card-img-fallback">🎮</div>
-                  ) : (
-                    <img
-                      className="card-img"
-                      src={game.cover}
-                      alt={game.title}
-                      onError={() => setImgErrors(e => ({ ...e, [game.id]: true }))}
-                    />
-                  )}
-                  <span
-                    className="genre-badge"
-                    style={{ background: genreColors[game.genre] || "#555" }}
-                  >
-                    {game.genre}
-                  </span>
-                </div>
-                <div className="card-body">
-                  <h2 className="card-title">{game.title}</h2>
-                  <p className="card-meta">{game.platform} · {game.year}</p>
-                  <p className="card-desc">{game.description}</p>
-                </div>
-              </div>
+              <Card key={game.id} game={game} index={i} />
             ))}
           </div>
         )}
@@ -144,5 +198,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
