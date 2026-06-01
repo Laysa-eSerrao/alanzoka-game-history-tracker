@@ -45,7 +45,7 @@ public/
 
 ## 🎮 Sobre o Alanzoka
 
-[Alanzoka](https://www.twitch.tv/alanzoka) é o meu streamer favorito e já que eu sou programadora, pensei "Por que não fazer um guia com os melhores jogo que ele já jogou para qaulquer um poder acessar os vídeos rapidamente?" Bom, e aqui está. Ainda não tem todos os jogos e todos os links, mas quem quiser ajudar, vou deixar a comunidade aberta para quem quiser ir atualizando. Aproveite, Chat!
+[Alanzoka](https://www.twitch.tv/alanzoka) é o meu streamer favorito e já que eu sou programadora, pensei "Por que não fazer um guia com os melhores jogo que ele já jogou para qualquer um poder acessar os vídeos disponíveis de maneira rápida e ainda ver informações sobre os jogos?" Bom, e aqui está. Ainda não tem todos os jogos e todos os links, mas quem quiser ajudar, vou deixar a comunidade aberta para quem quiser ajudar a ir atualizando. Aproveitem, Chat!
 ---
 
 Feito de fã para fã!
